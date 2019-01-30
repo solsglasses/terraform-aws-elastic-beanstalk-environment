@@ -721,7 +721,7 @@ resource "aws_elastic_beanstalk_environment" "default" {
   setting {
     namespace = "aws:elasticbeanstalk:managedactions:platformupdate"
     name      = "InstanceRefreshEnabled"
-    value     = "${var.instance_refresh_enabled}"
+    value     = "${var.instance_refresh_enabled ? "true" : "false"}"
   }
   setting {
     namespace = "aws:elasticbeanstalk:container:nodejs"
